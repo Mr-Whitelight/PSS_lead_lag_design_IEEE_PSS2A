@@ -1,3 +1,4 @@
+%Author: CHAN Yun Sang Ethan
 clc
 clear
 clf
@@ -40,8 +41,8 @@ set(ax(2), 'XTick', xtick); % Adjust as needed
 set(ax(2), 'XTickLabel', XTickLabel); % Set labels as integers
 
 % Increase font size for x-axis and y-axis tick labels
-set(ax(1), 'FontSize', 16); % Font size for magnitude plot
-set(ax(2), 'FontSize', 16); % Font size for phase plot
+set(ax(1), 'FontSize', 14); % Font size for magnitude plot
+set(ax(2), 'FontSize', 14); % Font size for phase plot
 
 % Create dummy plots for legends
 hold(ax(1), 'on');
@@ -139,8 +140,8 @@ set(ay(2), 'XTick', xtick); % Adjust as needed
 set(ay(2), 'XTickLabel', XTickLabel); % Set labels as integers
 
 % Increase font size for x-axis and y-axis tick labels
-set(ay(1), 'FontSize', 16); % Font size for magnitude plot
-set(ay(2), 'FontSize', 16); % Font size for phase plot
+set(ay(1), 'FontSize', 14); % Font size for magnitude plot
+set(ay(2), 'FontSize', 14); % Font size for phase plot
 
 % Create dummy plots for legends
 hold(ay(1), 'on');
@@ -266,8 +267,8 @@ set(az(2), 'XTick', xtick); % Adjust as needed
 set(az(2), 'XTickLabel', XTickLabel); % Set labels as integers
 
 % Increase font size for x-axis and y-axis tick labels
-set(az(1), 'FontSize', 16); % Font size for magnitude plot
-set(az(2), 'FontSize', 16); % Font size for phase plot
+set(az(1), 'FontSize', 14); % Font size for magnitude plot
+set(az(2), 'FontSize', 14); % Font size for phase plot
 
 % Create dummy plots for legends
 hold(az(1), 'on');
@@ -367,8 +368,8 @@ set(aa(2), 'XTick', xtick); % Adjust as needed
 set(aa(2), 'XTickLabel', XTickLabel); % Set labels as integers
 
 % Increase font size for x-axis and y-axis tick labels
-set(aa(1), 'FontSize', 16); % Font size for magnitude plot
-set(aa(2), 'FontSize', 16); % Font size for phase plot
+set(aa(1), 'FontSize', 14); % Font size for magnitude plot
+set(aa(2), 'FontSize', 14); % Font size for phase plot
 
 % Create dummy plots for legends
 hold(aa(1), 'on');
