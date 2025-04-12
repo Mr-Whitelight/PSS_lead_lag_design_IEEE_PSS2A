@@ -22,7 +22,7 @@ bp_gen.MagnitudeVisible = "on";
 bp_gen.Title.FontSize = 20;
 bp_gen.XLabel.FontSize = 15;
 bp_gen.Title.Color = [0 0 0];
-bp_gen.Title.String = 'Uncompensated Generator Frequency Response';
+bp_gen.Title.String = 'Ggen with No PSS Filter Frequency Response';
 grid on;
 hold off;
 
@@ -47,12 +47,12 @@ set(ax(2), 'FontSize', 12); % Font size for phase plot
 % Create dummy plots for legends
 hold(ax(1), 'on');
 hold(ax(2), 'on');
-plot(ax(1), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Magnitude');
-plot(ax(2), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Phase');
+plot(ax(1), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(ax(2), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
 
 % Create legends
-legend(ax(1), 'Uncompensated Magnitude', 'Location', 'southwest', 'box', 'off');
-legend(ax(2), 'Uncompensated Phase', 'Location', 'southwest', 'box', 'off');
+legend(ax(1), 'Ggen with no pss filter', 'Location', 'southwest', 'box', 'off');
+legend(ax(2), 'Ggen with no pss filter', 'Location', 'southwest', 'box', 'off');
 
 
 % Increase font size for the title
@@ -115,7 +115,7 @@ bp_G_1_compensated.MagnitudeVisible = "on";
 bp_G_1_compensated.Title.FontSize = 20;
 bp_G_1_compensated.XLabel.FontSize = 15;
 bp_G_1_compensated.Title.Color = [0 0 0];
-bp_G_1_compensated.Title.String = 'First stage Lead-Lag Compensated Frequency Response';
+bp_G_1_compensated.Title.String = '1st Stage Lead Compensation Frequency Response';
 
 bp_G_pss_1st = bodeplot(Gpss1, frequency_range, 'g.-');
 bp_G_pss_1st.FrequencyScale = "log";
@@ -148,19 +148,19 @@ hold(ay(1), 'on');
 hold(ay(2), 'on');
 
 % Create dummy plots for the magnitude legend
-plot(ay(1), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Magnitude');
-plot(ay(1), NaN, NaN, 'r-', 'DisplayName', 'Compensated Magnitude');
-plot(ay(1), NaN, NaN, 'g-', 'DisplayName', 'Gpss 1st Filter');
+plot(ay(1), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(ay(1), NaN, NaN, 'r-', 'DisplayName', 'Ggen compensated by Gpss1 only');
+plot(ay(1), NaN, NaN, 'g-', 'DisplayName', 'Gpss1');
 
 % Create dummy plot for the phase legend
-plot(ay(2), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Phase');
-plot(ay(2), NaN, NaN, 'r-', 'DisplayName', 'Compensated Phase');
-plot(ay(2), NaN, NaN, 'g-', 'DisplayName', 'Gpss 1st Filter');
+plot(ay(2), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(ay(2), NaN, NaN, 'r-', 'DisplayName', 'Ggen compensated by Gpss1 only');
+plot(ay(2), NaN, NaN, 'g-', 'DisplayName', 'Gpss1');
 
 % Create legends for both axes
-legend(ay(1), {'Uncompensated Magnitude', 'Compensated Magnitude', 'Gpss 1st Filter'},'Location', 'southwest', 'box', 'off');
+legend(ay(1), {'Ggen with no pss filter', 'Ggen compensated by Gpss1 only', 'Gpss1'},'Location', 'southwest', 'box', 'off');
 
-legend(ay(2), {'Uncompensated Phase', 'Compensated Phase', 'Gpss 1st Filter'},'Location', 'southwest', 'box', 'off');
+legend(ay(2), {'Ggen with no pss filter', 'Ggen compensated by Gpss1 only', 'Gpss1'},'Location', 'southwest', 'box', 'off');
 
 % Set x-axis tick label color to pure black
 set(ay(1), 'XColor', 'k'); % Set x-axis color for magnitude plot
@@ -224,7 +224,7 @@ bp_G_2_compensated.MagnitudeVisible = "on";
 bp_G_2_compensated.Title.FontSize = 20;
 bp_G_2_compensated.XLabel.FontSize = 15;
 bp_G_2_compensated.Title.Color = [0 0 0];
-bp_G_2_compensated.Title.String = 'Second stage Lead-Lag Compensated Frequency Response';
+bp_G_2_compensated.Title.String = '2nd Stage Lag Compensation Frequency Response';
 
 bp_G_pss_1st = bodeplot(Gpss1, frequency_range, 'k.-');
 bp_G_pss_1st.FrequencyScale = "log";
@@ -275,22 +275,22 @@ hold(az(1), 'on');
 hold(az(2), 'on');
 
 % Create dummy plots for the magnitude legend
-plot(az(1), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Magnitude');
-plot(az(1), NaN, NaN, 'r-', 'DisplayName', 'Magnitude of Compensated by 2nd Stage Filter');
-plot(az(1), NaN, NaN, 'k-', 'DisplayName', 'Gpss 1st Filter');
-plot(az(1), NaN, NaN, 'g-', 'DisplayName', 'Gpss 2nd Filter');
-plot(az(1), NaN, NaN, 'm-', 'DisplayName', 'Gpss 1st + 2nd Filter');
+plot(az(1), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(az(1), NaN, NaN, 'r-', 'DisplayName', 'Ggen compensated by Gpss2 only');
+plot(az(1), NaN, NaN, 'k-', 'DisplayName', 'Gpss1');
+plot(az(1), NaN, NaN, 'g-', 'DisplayName', 'Gpss2');
+plot(az(1), NaN, NaN, 'm-', 'DisplayName', 'Gpss');
 
 % Create dummy plot for the phase legend
-plot(az(2), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Phase');
-plot(az(2), NaN, NaN, 'r-', 'DisplayName', 'Magnitude of Compensated by 2nd Stage Filter');
-plot(az(2), NaN, NaN, 'k-', 'DisplayName', 'Gpss 1st Filter');
-plot(az(2), NaN, NaN, 'g-', 'DisplayName', 'Gpss 2nd Filter');
-plot(az(2), NaN, NaN, 'm-', 'DisplayName', 'Gpss 1st + 2nd Filter');
+plot(az(2), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(az(2), NaN, NaN, 'r-', 'DisplayName', 'Ggen compensated by Gpss2 only');
+plot(az(2), NaN, NaN, 'k-', 'DisplayName', 'Gpss1');
+plot(az(2), NaN, NaN, 'g-', 'DisplayName', 'Gpss2');
+plot(az(2), NaN, NaN, 'm-', 'DisplayName', 'Gpss');
 
 % Create legends for both axes
-legend(az(1), {'Uncompensated Magnitude', 'Magnitude of Compensated by 2nd Stage Filter','Gpss 1st Filter', 'Gpss 2nd Filter', 'Gpss 1st + 2nd Filter'},'Location', 'southwest', 'box', 'off');
-legend(az(2), {'Uncompensated Phase', 'Magnitude of Compensated by 2nd Stage Filter', 'Gpss 1st Filter','Gpss 2nd Filter','Gpss 1st + 2nd Filter'},'Location', 'southwest', 'box', 'off');
+legend(az(1), {'Ggen with no pss filter', 'Ggen compensated by Gpss2 only','Gpss1', 'Gpss2', 'Gpss'},'Location', 'southwest', 'box', 'off');
+legend(az(2), {'Ggen with no pss filter', 'Ggen compensated by Gpss2 only', 'Gpss1','Gpss2','Gpss'},'Location', 'southwest', 'box', 'off');
 
 
 % Set x-axis tick label color to pure black
@@ -376,22 +376,22 @@ hold(aa(1), 'on');
 hold(aa(2), 'on');
 
 % Create dummy plots for the magnitude legend
-plot(aa(1), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Magnitude');
-plot(aa(1), NaN, NaN, 'r-', 'DisplayName', 'G1 compensated');
-plot(aa(1), NaN, NaN, 'k-', 'DisplayName', 'G2 compensated');
-plot(aa(1), NaN, NaN, 'g-', 'DisplayName', 'Ggen compensated');
+plot(aa(1), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(aa(1), NaN, NaN, 'r-', 'DisplayName', 'Ggen compensated by Gpss1 only');
+plot(aa(1), NaN, NaN, 'k-', 'DisplayName', 'Ggen compensated by Gpss2 only');
+plot(aa(1), NaN, NaN, 'g-', 'DisplayName', 'Ggen compensated by Gpss');
 plot(aa(1), NaN, NaN, 'm-', 'DisplayName', 'Gpss');
 
 % Create dummy plot for the phase legend
-plot(aa(2), NaN, NaN, 'b-', 'DisplayName', 'Uncompensated Magnitude');
-plot(aa(2), NaN, NaN, 'r-', 'DisplayName', 'G1 compensated');
-plot(aa(2), NaN, NaN, 'k-', 'DisplayName', 'G2 compensated');
-plot(aa(2), NaN, NaN, 'g-', 'DisplayName', 'Ggen compensated');
+plot(aa(2), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
+plot(aa(2), NaN, NaN, 'r-', 'DisplayName', 'Ggen compensated by Gpss1 only');
+plot(aa(2), NaN, NaN, 'k-', 'DisplayName', 'Ggen compensated by Gpss2 only');
+plot(aa(2), NaN, NaN, 'g-', 'DisplayName', 'Ggen compensated by Gpss');
 plot(aa(2), NaN, NaN, 'm-', 'DisplayName', 'Gpss');
 
 % Create legends for both axes
-legend(aa(1), {'Uncompensated Magnitude', 'G1 compensated','G2 compensated', 'Ggen compensated', 'Gpss'},'Location', 'southwest', 'box', 'off');
-legend(aa(2), {'Uncompensated Phase', 'G1 compensated', 'G2 compensated','Ggen compensated','Gpss'},'Location', 'southwest', 'box', 'off');
+legend(aa(1), {'Ggen with no pss filter', 'Ggen compensated by Gpss1 only','Ggen compensated by Gpss2 only', 'Ggen compensated by Gpss', 'Gpss'},'Location', 'southwest', 'box', 'off');
+legend(aa(2), {'Ggen with no pss filter', 'Ggen compensated by Gpss1 only', 'Ggen compensated by Gpss2 only','Ggen compensated by Gpss','Gpss'},'Location', 'southwest', 'box', 'off');
 
 
 % Set x-axis tick label color to pure black
