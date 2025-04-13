@@ -54,10 +54,6 @@ plot(ax(2), NaN, NaN, 'b-', 'DisplayName', 'Ggen with no pss filter');
 legend(ax(1), 'Ggen with no pss filter', 'Location', 'southwest', 'box', 'off');
 legend(ax(2), 'Ggen with no pss filter', 'Location', 'southwest', 'box', 'off');
 
-
-% Increase font size for the title
-% title(ax(1), 'Uncompensated Generator Frequency Response', 'FontSize', 15);
-
 % Set x-axis tick label color to pure black
 set(ax(1), 'XColor', 'k'); % Set x-axis color for magnitude plot
 set(ax(2), 'XColor', 'k'); % Set x-axis color for phase plot
@@ -80,7 +76,7 @@ frequencies_in_hz = logspace(log10(0.01), log10(3), 10000); % 10,000 points from
 phase_deg = squeeze(phase); % Remove singleton dimensions
 wout = squeeze(wout); % Remove singleton dimensions
 
-% Find the index where phase is closest to -45 degrees
+% Find the index where phase is closest to -65 degrees
 target_phase_1st = -65;
 [~, idx] = min(abs(phase_deg - target_phase_1st));
 
@@ -187,7 +183,6 @@ target_phase_2nd = -45;
 
 % Get the corresponding frequency in Radian
 frequency_at_phase_2nd = (wout(idx));
-% frequency_at_phase_2nd = 3;
 
 % Display the result
 fprintf('Cut-off Frequency of 2nd lag filter at %d degrees: %.4f rad/s\n', target_phase_2nd, frequency_at_phase_2nd);
